@@ -3,10 +3,14 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
-
+from selenium.webdriver.chrome.options import Options
 
 async def get_schedule():
-    driver = webdriver.Chrome('./chromedriver')
+    chrome_options = Options()
+    # chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome('./chromedriver', chrome_options=chrome_options)
     driver.get("https://accounts.google.com/signin")
     driver.implicitly_wait(15)
 
