@@ -6,7 +6,7 @@ from selenium.webdriver.support.select import Select
 
 
 async def get_schedule():
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome('./chromedriver')
     driver.get("https://accounts.google.com/signin")
     driver.implicitly_wait(15)
 
