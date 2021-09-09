@@ -26,6 +26,8 @@ async def get_schedule():
     button = driver.find_elements_by_xpath(x_path)
     button[0].click()
     print('Login Successful...!!')
+    
+    driver.implicitly_wait(15)
 
     driver.get("https://fap.fpt.edu.vn/")
     select = Select(driver.find_element_by_id('ctl00_mainContent_ddlCampus'))
